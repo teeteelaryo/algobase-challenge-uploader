@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "algobase-challenge-uploader"
+version = "0.1.0"
+description = "A Python CLI tool to upload coding challenges to a GitHub repo for instructors and learners"
+readme = "README.md"
+readme-content-type = "text/markdown"
+license = { text = "MIT" }
+authors = [
+  { name = "Titilayo Odufowoke", email = "titilayoodufowoke@gmail.com" }
+]
+dependencies = [
+  # list your runtime dependencies here, matching what’s in requirements.txt
+  # e.g.
+    "requests>=2.25.1",
+    "PyGithub>=1.55",
+]
+# Optional if you have extra dependencies for dev/testing
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+Home = "https://github.com/teeteelaryo/algobase-challenge-uploader"
+Bug Tracker = "https://github.com/teeteelaryo/algobase-challenge-uploader/issues"
+Documentation = "https://github.com/teeteelaryo/algobase-challenge-uploader#readme"
+
+[tool.setuptools]
+# If you want to include package data etc.
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*", "docs*", "examples*"]
+
+[tool.setuptools.entry-points.console_scripts]
+algobase-uploader = "challenge_uploader.main:main"
